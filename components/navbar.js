@@ -2,10 +2,12 @@ import {
   Box,
   Container,
   Flex,
+  Spacer,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import MobileMenu from "./mobileMenu";
 import ToggleDarkMode from "./toggle-button";
 
 export default function Navbar() {
@@ -31,10 +33,13 @@ export default function Navbar() {
               <Link href={"/about"}>About</Link>
             </Box>
           </Flex>
-          <Flex display={{ base: "flex", md: "none" }} flexDir={"column"}>
-            Hamburger
+          <Flex width={"28"} justifyContent={"flex-end"}>
+            <ToggleDarkMode />
+            <Spacer />
+            <Flex display={{ base: "flex", md: "none" }} flexDir={"column"}>
+              <MobileMenu />
+            </Flex>
           </Flex>
-          <ToggleDarkMode />
         </Flex>
       </Container>
     </Container>

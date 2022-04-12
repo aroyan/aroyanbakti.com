@@ -1,5 +1,5 @@
 import { Box, Container, useColorModeValue } from "@chakra-ui/react";
-import Navbar from "./navbar";
+import Navbar from "../navbar";
 
 export default function Layout({ children }) {
   const BG = useColorModeValue("#fdf6e3", "#002b36");

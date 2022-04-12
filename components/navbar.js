@@ -1,39 +1,22 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Spacer,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import Link from "next/link";
+import { Container, Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
+import Logo from "./logo";
 import MobileMenu from "./mobileMenu";
 import ToggleDarkMode from "./toggle-button";
+import DesktopMenu from "./desktopMenu";
 
 export default function Navbar() {
-  const navItemsColor = useColorModeValue("dark", "white");
   const navBg = useColorModeValue("#eee8d5", "#073642");
-  const hoverEffect = { textDecoration: "underline" };
   return (
-    <Container maxW={"full"} bg={navBg}>
-      <Container maxW={"container.md"}>
+    <Container maxW={"full"} bg={navBg} p={"0"}>
+      <Container maxW={{ base: "full", md: "container.md" }} p={"0"}>
         <Flex p={"4"} align={"center"} justifyContent={"space-between"}>
-          <Text fontWeight={"bold"} fontSize={"2xl"} _hover={{ color: "gray" }}>
-            <Link href={"/"}>Aroyan</Link>
-          </Text>
+          <Logo />
+          <DesktopMenu />
           <Flex
-            color={navItemsColor}
-            display={{ base: "none", md: "flex" }}
-            ml={"96"}
+            width={"28"}
+            justifyContent={"flex-end"}
+            ml={{ base: "0", lg: "4" }}
           >
-            <Box p={"2"} _hover={hoverEffect}>
-              <Link href={"/projects"}>Projects</Link>
-            </Box>
-            <Box ml={"4"} p={"2"} _hover={hoverEffect}>
-              <Link href={"/about"}>About</Link>
-            </Box>
-          </Flex>
-          <Flex width={"28"} justifyContent={"flex-end"}>
             <ToggleDarkMode />
             <Spacer />
             <Flex display={{ base: "flex", md: "none" }} flexDir={"column"}>

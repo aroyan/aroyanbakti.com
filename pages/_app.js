@@ -1,6 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
-import theme from "../components/theme";
+import theme from "../utils/theme";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,5 +1,10 @@
 import Layout from "../components/layout/layout";
+import BlogPostWithImage from "../components/cards";
 
 export default function projects() {
-  return <Layout>projects</Layout>;
+  return (
+    <Layout>
+      <BlogPostWithImage />
+    </Layout>
+  );
 }

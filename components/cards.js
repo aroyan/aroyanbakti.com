@@ -7,6 +7,7 @@ import {
   Stack,
   useColorModeValue,
   Button,
+  Link,
 } from "@chakra-ui/react";
 
 export default function BlogPostWithImage(props) {
@@ -31,7 +32,7 @@ export default function BlogPostWithImage(props) {
           mb={6}
           pos={"relative"}
         >
-          <Image src={props.imageLink} layout={"fill"} alt={"test"} />
+          <Image src={props.imageLink} layout={"fill"} alt={props.altImage} />
         </Box>
         <Stack>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>
@@ -40,8 +41,22 @@ export default function BlogPostWithImage(props) {
           <Text color={"gray.500"}>{props.description}</Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Button>Code</Button>
-          <Button>Preview</Button>
+          <Link
+            href={props.codeLink}
+            _hover={{ textDecoration: "none" }}
+            _focus={{ border: "none" }}
+            isExternal
+          >
+            <Button>Code</Button>
+          </Link>
+          <Link
+            href={props.previewLink}
+            _hover={{ textDecoration: "none" }}
+            _focus={{ border: "none" }}
+            isExternal
+          >
+            <Button>Preview</Button>
+          </Link>
         </Stack>
       </Box>
     </Center>

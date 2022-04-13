@@ -5,12 +5,11 @@ import {
   Heading,
   Text,
   Stack,
-  Avatar,
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
 
-export default function BlogPostWithImage() {
+export default function BlogPostWithImage(props) {
   const bgColor = useColorModeValue("white", "gray.900");
   const headingColor = useColorModeValue("gray.700", "white");
   return (
@@ -32,15 +31,13 @@ export default function BlogPostWithImage() {
           mb={6}
           pos={"relative"}
         >
-          <Image src={"/images/unsplash1.jpg"} layout={"fill"} alt={"test"} />
+          <Image src={props.imageLink} layout={"fill"} alt={"test"} />
         </Box>
         <Stack>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>
-            Boost your conversion rate
+            {props.heading}
           </Heading>
-          <Text color={"gray.500"}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          </Text>
+          <Text color={"gray.500"}>{props.description}</Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Button>Code</Button>

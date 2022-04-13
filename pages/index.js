@@ -1,5 +1,4 @@
 import {
-  Center,
   HStack,
   Link,
   Heading,
@@ -21,7 +20,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <VStack mt={"36"}>
+        <VStack mt={"36"} h={"calc(60vh)"}>
           <Heading as={"h1"} fontSize={"3xl"} textAlign={"center"} mb={"4"}>
             I&apos;m a Front End Developer based in Indonesia
           </Heading>

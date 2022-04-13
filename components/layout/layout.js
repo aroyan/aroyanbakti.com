@@ -10,7 +10,7 @@ export default function Layout({ children }) {
         maxW={"container.md"}
         p={"4"}
         fontSize={"1.125rem"}
-        height={{ base: "100vh", lg: "calc(100vh - 68px)" }}
+        height={"calc(100vh - 72px)"}
       >
         {children}
       </Container>

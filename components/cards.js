@@ -10,7 +10,15 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-export default function BlogPostWithImage(props) {
+// Extracting props object
+export default function BlogPostWithImage({
+  imageLink,
+  altImage,
+  heading,
+  description,
+  codeLink,
+  previewLink,
+}) {
   const bgColor = useColorModeValue("white", "gray.900");
   const headingColor = useColorModeValue("gray.700", "white");
   return (
@@ -32,17 +40,17 @@ export default function BlogPostWithImage(props) {
           mb={6}
           pos={"relative"}
         >
-          <Image src={props.imageLink} layout={"fill"} alt={props.altImage} />
+          <Image src={imageLink} alt={altImage} />
         </Box>
         <Stack>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>
-            {props.heading}
+            {heading}
           </Heading>
-          <Text color={"gray.500"}>{props.description}</Text>
+          <Text color={"gray.500"}>{description}</Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Link
-            href={props.codeLink}
+            href={codeLink}
             _hover={{ textDecoration: "none" }}
             _focus={{ border: "none" }}
             isExternal
@@ -50,7 +58,7 @@ export default function BlogPostWithImage(props) {
             <Button>Code</Button>
           </Link>
           <Link
-            href={props.previewLink}
+            href={previewLink}
             _hover={{ textDecoration: "none" }}
             _focus={{ border: "none" }}
             isExternal

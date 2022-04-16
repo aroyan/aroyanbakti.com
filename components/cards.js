@@ -24,7 +24,7 @@ export default function BlogPostWithImage({
   return (
     <Center py={6}>
       <Box
-        maxW={"445px"}
+        maxW={"400px"}
         w={"full"}
         bg={bgColor}
         boxShadow={"2xl"}
@@ -33,14 +33,14 @@ export default function BlogPostWithImage({
         overflow={"hidden"}
       >
         <Box
-          h={"210px"}
+          minH={"210px"}
           bg={"gray.100"}
           mt={-6}
           mx={-6}
           mb={6}
           pos={"relative"}
         >
-          <Image src={imageLink} alt={altImage} />
+          <Image src={imageLink} alt={altImage} layout={"fill"} />
         </Box>
         <Stack>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>

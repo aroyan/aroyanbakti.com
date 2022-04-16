@@ -12,7 +12,7 @@ export default function Home() {
   const githubLogo = useColorModeValue("#333", "#f0f6fc");
   return (
     <div>
-      <Layout title={"Front End Developer"}>
+      <Layout title={"Aroyan Bakti | Front End Developer"}>
         <VStack mt={"36"} h={"calc(62vh)"}>
           <Heading as={"h1"} fontSize={"3xl"} textAlign={"center"} mb={"4"}>
             I&apos;m a Front End Developer based in Indonesia

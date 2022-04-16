@@ -5,7 +5,6 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Head from "next/head";
 import Layout from "../components/layout/layout";
 import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
 
@@ -13,14 +12,8 @@ export default function Home() {
   const githubLogo = useColorModeValue("#333", "#f0f6fc");
   return (
     <div>
-      <Head>
-        <title>Aroyan Bakti | Front End Developer</title>
-        <meta name="description" content="Portfolio made with Next js" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Layout>
-        <VStack mt={"36"} h={"calc(60vh)"}>
+      <Layout title={"Front End Developer"}>
+        <VStack mt={"36"} h={"calc(62vh)"}>
           <Heading as={"h1"} fontSize={"3xl"} textAlign={"center"} mb={"4"}>
             I&apos;m a Front End Developer based in Indonesia
           </Heading>

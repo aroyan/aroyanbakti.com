@@ -6,9 +6,9 @@ import {
   Text,
   Stack,
   useColorModeValue,
-  Button,
   Link,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 // Extracting props object
 export default function BlogPostWithImage({
@@ -49,21 +49,11 @@ export default function BlogPostWithImage({
           <Text color={"gray.500"}>{description}</Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Link
-            href={codeLink}
-            _hover={{ textDecoration: "none" }}
-            _focus={{ border: "none" }}
-            isExternal
-          >
-            <Button>Code</Button>
+          <Link href={codeLink} isExternal>
+            Code <ExternalLinkIcon mx="2px" />
           </Link>
-          <Link
-            href={previewLink}
-            _hover={{ textDecoration: "none" }}
-            _focus={{ border: "none" }}
-            isExternal
-          >
-            <Button>Preview</Button>
+          <Link href={previewLink} isExternal>
+            Preview <ExternalLinkIcon mx="2px" />
           </Link>
         </Stack>
       </Box>

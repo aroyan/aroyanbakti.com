@@ -6,7 +6,7 @@ export default function ToggleDarkMode() {
   const icons = useColorModeValue(<MoonIcon />, <SunIcon />);
   return (
     <>
-      <Button as={"button"} onClick={toggleColorMode}>
+      <Button as={"button"} onClick={toggleColorMode} ariaLabel={"Dark Mode"}>
         {icons}
       </Button>
     </>

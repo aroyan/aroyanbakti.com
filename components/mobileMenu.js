@@ -19,7 +19,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen}>
+      <Button ref={btnRef} onClick={onOpen} ariaLabel={"Hamburger Button"}>
         <HamburgerIcon />
       </Button>
       <Drawer

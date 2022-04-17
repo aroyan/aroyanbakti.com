@@ -12,7 +12,7 @@ export default function Home() {
   const githubLogo = useColorModeValue("#333", "#f0f6fc");
   return (
     <div>
-      <Layout title={"Aroyan Bakti | Front End Developer"}>
+      <Layout title={"Home"}>
         <VStack mt={"36"} h={"calc(62vh)"}>
           <Heading as={"h1"} fontSize={"3xl"} textAlign={"center"} mb={"4"}>
             I&apos;m a Front End Developer based in Indonesia
@@ -30,6 +30,7 @@ export default function Home() {
               href="https://github.com/aroyan"
               isExternal
               _hover={{ color: githubLogo }}
+              ariaLabel={"GitHub"}
             >
               <BsGithub size={"2em"} />
             </Link>
@@ -37,6 +38,7 @@ export default function Home() {
               href="https://linkedin.com/in/aroyanbakti/"
               isExternal
               _hover={{ color: "#0A66C2" }}
+              ariaLabel={"LinkedIn"}
             >
               <BsLinkedin size={"2em"} />
             </Link>
@@ -44,6 +46,7 @@ export default function Home() {
               href="https://youtube.com/aroyanbakti"
               isExternal
               _hover={{ color: "#c4302b " }}
+              ariaLabel={"YouTube"}
             >
               <BsYoutube size={"2em"} />
             </Link>

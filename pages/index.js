@@ -4,6 +4,7 @@ import {
   Heading,
   VStack,
   useColorModeValue,
+  Text,
 } from "@chakra-ui/react";
 import Layout from "../components/layout/layout";
 import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
@@ -30,25 +31,25 @@ export default function Home() {
               href="https://github.com/aroyan"
               isExternal
               _hover={{ color: githubLogo }}
-              ariaLabel={"GitHub"}
             >
               <BsGithub size={"2em"} />
+              <Text display={"none"}>GitHub</Text>
             </Link>
             <Link
               href="https://linkedin.com/in/aroyanbakti/"
               isExternal
               _hover={{ color: "#0A66C2" }}
-              ariaLabel={"LinkedIn"}
             >
               <BsLinkedin size={"2em"} />
+              <Text display={"none"}>LinkedIn</Text>
             </Link>
             <Link
               href="https://youtube.com/aroyanbakti"
               isExternal
               _hover={{ color: "#c4302b " }}
-              ariaLabel={"YouTube"}
             >
               <BsYoutube size={"2em"} />
+              <Text display={"none"}>YouTube</Text>
             </Link>
           </HStack>
         </VStack>

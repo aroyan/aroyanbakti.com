@@ -8,6 +8,7 @@ import {
   DrawerBody,
   useDisclosure,
   VStack,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
@@ -19,7 +20,8 @@ export default function MobileMenu() {
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen} ariaLabel={"Hamburger Button"}>
+      <Button ref={btnRef} onClick={onOpen}>
+        <Text display={"none"}>Hamburger</Text>
         <HamburgerIcon />
       </Button>
       <Drawer

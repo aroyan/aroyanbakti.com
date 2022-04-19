@@ -1,5 +1,5 @@
 import { Box, Container, useColorModeValue } from "@chakra-ui/react";
-import CustomHead from "./CustomHead";
+import CustomHead from "./customHead";
 import Navbar from "../navbar";
 
 export default function Layout({ children, title }) {

@@ -1,16 +1,8 @@
-import {
-  HStack,
-  Link,
-  Heading,
-  VStack,
-  useColorModeValue,
-  Text,
-} from "@chakra-ui/react";
+import { Heading, VStack } from "@chakra-ui/react";
 import Layout from "../components/layout/layout";
-import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
+import Socials from "../components/Socials";
 
 export default function Home() {
-  const githubLogo = useColorModeValue("#333", "#f0f6fc");
   return (
     <div>
       <Layout title={"Home"}>
@@ -26,32 +18,7 @@ export default function Home() {
           >
             Find me on
           </Heading>
-          <HStack>
-            <Link
-              href="https://github.com/aroyan"
-              isExternal
-              _hover={{ color: githubLogo }}
-            >
-              <BsGithub size={"2em"} />
-              <Text display={"none"}>GitHub</Text>
-            </Link>
-            <Link
-              href="https://linkedin.com/in/aroyanbakti/"
-              isExternal
-              _hover={{ color: "#0A66C2" }}
-            >
-              <BsLinkedin size={"2em"} />
-              <Text display={"none"}>LinkedIn</Text>
-            </Link>
-            <Link
-              href="https://youtube.com/aroyanbakti"
-              isExternal
-              _hover={{ color: "#c4302b " }}
-            >
-              <BsYoutube size={"2em"} />
-              <Text display={"none"}>YouTube</Text>
-            </Link>
-          </HStack>
+          <Socials />
         </VStack>
       </Layout>
     </div>

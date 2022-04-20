@@ -11,7 +11,7 @@ export default function CustomHead({ title }) {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>{title}</title>
+          <title>{`${title} | Aroyan Bakti`}</title>
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="title"

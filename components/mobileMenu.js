@@ -1,5 +1,4 @@
 import {
-  Button,
   Drawer,
   DrawerOverlay,
   DrawerContent,
@@ -8,7 +7,7 @@ import {
   DrawerBody,
   useDisclosure,
   VStack,
-  Text,
+  IconButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
@@ -20,10 +19,12 @@ export default function MobileMenu() {
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen}>
-        <Text display={"none"}>Hamburger</Text>
-        <HamburgerIcon />
-      </Button>
+      <IconButton
+        aria-label="Hamburger Button"
+        ref={btnRef}
+        onClick={onOpen}
+        icon={<HamburgerIcon />}
+      />
       <Drawer
         isOpen={isOpen}
         placement="right"

@@ -1,6 +1,6 @@
 import { Heading, VStack, useColorModeValue } from "@chakra-ui/react";
 import Layout from "../components/layout/layout";
-import Socials from "../components/socials";
+import Socials from "../components/socialList";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");

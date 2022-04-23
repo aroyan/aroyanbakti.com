@@ -23,10 +23,10 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <AnimatePresence exitBeforeEnter initial={true}>
         <Script
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        ></Script>
-        <Script strategy="lazyOnload" id="ga">
+        />
+        <Script strategy="afterInteractive" id="analytics">
           {`
             window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

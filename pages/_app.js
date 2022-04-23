@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 import theme from "../utils/theme";
 import * as ga from "../lib/ga";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -21,6 +22,19 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <AnimatePresence exitBeforeEnter initial={true}>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        ></Script>
+        <Script strategy="lazyOnload" id="ga">
+          {`
+            window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `}
+        </Script>
         <Component {...pageProps} />
       </AnimatePresence>
     </ChakraProvider>

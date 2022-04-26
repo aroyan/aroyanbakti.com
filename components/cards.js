@@ -36,11 +36,17 @@ export default function BlogPostWithImage({
           minH={"210px"}
           bg={"gray.100"}
           mt={-6}
-          mx={-6}
+          mx={{ base: "-20", md: "-12" }}
           mb={6}
           pos={"relative"}
         >
-          <Image src={imageLink} alt={altImage} layout={"fill"} />
+          <Image
+            src={imageLink}
+            alt={altImage}
+            layout={"responsive"}
+            width={683}
+            height={328}
+          />
         </Box>
         <Stack>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>

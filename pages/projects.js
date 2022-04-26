@@ -5,7 +5,7 @@ export default function projects() {
   return (
     <Layout title={"Projects"}>
       <BlogPostWithImage
-        imageLink={"/images/chat-app-css.jpg"}
+        imageLink={"/images/chat-app.png"}
         altImage={"Chat App CSS Illustration"}
         heading={"Chat App CSS Illustration"}
         description={"Create a Illustration using CSS"}
@@ -13,15 +13,7 @@ export default function projects() {
         previewLink={"https://aroyan.github.io/chat-app"}
       />
       <BlogPostWithImage
-        imageLink={"/images/manage-landing-preview.png"}
-        altImage={"Manage Landing Page"}
-        heading={"Manage Landing Page"}
-        description={"Landing page created with HTML, SCSS, and JavaScript"}
-        codeLink={"https://github.com/aroyan/manage-landing"}
-        previewLink={"https://aroyan.github.io/manage-landing/"}
-      />
-      <BlogPostWithImage
-        imageLink={"/images/drum-machine-preview.png"}
+        imageLink={"/images/drum-machine.png"}
         altImage={"Drum Machine Preview"}
         heading={"Simple Drum Machine"}
         description={

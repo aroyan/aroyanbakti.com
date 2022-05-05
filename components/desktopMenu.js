@@ -15,7 +15,7 @@ export default function DesktopMenu() {
         <Link href={"/projects"}>Projects</Link>
       </Box>
       <Box ml={"4"} p={"2"} _hover={hoverEffect}>
-        <Link href={"/posts"}>Posts</Link>
+        <Link href={"/blog"}>Blog</Link>
       </Box>
     </Flex>
   );

@@ -7,6 +7,7 @@ import {
   Stack,
   useColorModeValue,
   Link,
+  Divider,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -21,6 +22,7 @@ export default function BlogPostWithImage({
 }) {
   const bgColor = useColorModeValue("white", "gray.900");
   const headingColor = useColorModeValue("gray.700", "white");
+  const textColor = useColorModeValue("gray.700", "#a0afc4");
   return (
     <Center py={6}>
       <Box
@@ -34,25 +36,36 @@ export default function BlogPostWithImage({
       >
         <Box
           minH={"210px"}
-          bg={"gray.100"}
+          bg={bgColor}
           mt={-6}
-          mx={-6}
+          mx={{ base: "-20", md: "-12" }}
           mb={6}
           pos={"relative"}
         >
-          <Image src={imageLink} alt={altImage} layout={"fill"} />
+          <Image
+            src={imageLink}
+            alt={altImage}
+            layout={"responsive"}
+            width={683}
+            height={328}
+          />
         </Box>
-        <Stack>
+        <Stack mb={"4"}>
           <Heading color={headingColor} fontSize={"2xl"} fontFamily={"body"}>
             {heading}
           </Heading>
-          <Text color={"gray.500"}>{description}</Text>
+          <Text color={textColor}>{description}</Text>
         </Stack>
-        <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Link href={codeLink} isExternal>
+        <Divider />
+        <Stack mt={2} direction={"row"} spacing={4} align={"center"}>
+          <Link href={codeLink} isExternal _hover={{ textDecor: "underline" }}>
             Code <ExternalLinkIcon mx="2px" />
           </Link>
-          <Link href={previewLink} isExternal>
+          <Link
+            href={previewLink}
+            isExternal
+            _hover={{ textDecor: "underline" }}
+          >
             Preview <ExternalLinkIcon mx="2px" />
           </Link>
         </Stack>

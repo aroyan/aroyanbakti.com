@@ -22,10 +22,7 @@ export default function CustomHead({ title }) {
             content="Aroyan Bakti Setiawan Portfolio website, built with NextJS and ChakraUI"
           />
           <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://portfolio-v2-arbase.vercel.app/"
-          />
+          <meta property="og:url" content="https://www.aroyanbakti.com" />
           <meta
             property="og:title"
             content="Aroyan Bakti Setiawan - I'm a Front End Developer based in Indonesia"
@@ -36,10 +33,7 @@ export default function CustomHead({ title }) {
           />
           <meta property="og:image" content="" />
           <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://portfolio-v2-arbase.vercel.app/"
-          />
+          <meta property="twitter:url" content="https://www.aroyanbakti.com" />
           <meta
             property="twitter:title"
             content="Aroyan Bakti Setiawan - I'm a Front End Developer based in Indonesia"

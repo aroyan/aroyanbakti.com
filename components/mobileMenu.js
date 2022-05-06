@@ -44,8 +44,8 @@ export default function MobileMenu() {
               <Link href={"/projects"}>
                 <a>Projects</a>
               </Link>
-              <Link href={"/posts"}>
-                <a>Posts</a>
+              <Link href={"/blog"}>
+                <a>Blog</a>
               </Link>
             </VStack>
             <style jsx>

@@ -14,7 +14,7 @@ export default function Home() {
           mb={"4"}
           color={textColor}
         >
-          Front End Developer based in Indonesia
+          Frontend Developer based in Indonesia
         </Heading>
         <Heading
           as="h2"

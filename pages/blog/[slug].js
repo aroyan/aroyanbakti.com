@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Layout from "../../components/layout/layout";
+import { Prose } from "@nikolovlazar/chakra-ui-prose";
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -37,7 +38,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPost({ blog }) {
-  console.log(blog);
+  // console.log(blog);
   const { title, blogPost } = blog.fields;
-  return <Layout>{documentToReactComponents(blogPost)}</Layout>;
+  return (
+    <Layout title={title}>
+      <Prose>
+        <h2>{title}</h2>
+        {documentToReactComponents(blogPost)}
+      </Prose>
+    </Layout>
+  );
 }

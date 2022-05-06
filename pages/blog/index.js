@@ -9,7 +9,10 @@ export async function getStaticProps() {
     accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
   });
 
-  const res = await client.getEntries({ content_type: "blogV2" });
+  const res = await client.getEntries({
+    content_type: "blogV2",
+    order: "-sys.createdAt",
+  });
   return {
     props: {
       blogV2: res.items,
@@ -18,14 +21,12 @@ export async function getStaticProps() {
 }
 
 export default function BlogHome({ blogV2 }) {
-  console.log(blogV2);
+  // console.log(blogV2);
   return (
-    <Layout>
-      <Flex gap={"2"} flexWrap={"wrap"}>
-        {blogV2.map((blog) => (
-          <BlogCard key={blog.sys.id} blog={blog} />
-        ))}
-      </Flex>
+    <Layout title={"Blog"}>
+      {blogV2.map((blog) => (
+        <BlogCard key={blog.sys.id} blog={blog} />
+      ))}
     </Layout>
   );
 }

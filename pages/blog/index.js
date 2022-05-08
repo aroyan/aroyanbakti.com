@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
-import Layout from "../../components/layout/layout";
-import BlogCard from "../../components/BlogCard";
 import { Flex } from "@chakra-ui/react";
+import BlogCard from "../../components/BlogCard";
+import BlogLayout from "../../components/layout/blogLayout";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -23,10 +23,10 @@ export async function getStaticProps() {
 export default function BlogHome({ blogV2 }) {
   // console.log(blogV2);
   return (
-    <Layout title={"Blog"}>
+    <BlogLayout title={"Blog"}>
       {blogV2.map((blog) => (
         <BlogCard key={blog.sys.id} blog={blog} />
       ))}
-    </Layout>
+    </BlogLayout>
   );
 }

@@ -1,6 +1,9 @@
-import { createClient } from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/image";
 import Layout from "../../components/layout/layout";
+import { createClient } from "contentful";
+import { BLOCKS } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Center, Spinner } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 
 const client = createClient({
@@ -21,7 +24,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -31,20 +34,56 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/blog",
+        permanent: false,
+      },
+    };
+  }
+
   return {
-    props: { blog: items[0] },
+    props: { item: items[0] },
     revalidate: 10,
   };
 }
 
-export default function BlogPost({ blog }) {
-  // console.log(blog);
-  const { title, blogPost } = blog.fields;
+const BLOCK_IMAGE = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      // console.log(node);
+      return (
+        <Image
+          src={`https:${node.data.target.fields.file.url}`}
+          width={node.data.target.fields.file.details.image.width}
+          height={node.data.target.fields.file.details.image.height}
+          alt={node.data.target.fields.title}
+        />
+      );
+    },
+  },
+};
+
+export default function BlogPost({ item }) {
+  if (!item)
+    return (
+      <Layout title={"Loading"}>
+        <Center height={"calc(100vh - 80px)"}>
+          <Spinner />
+        </Center>
+      </Layout>
+    );
+  const { title, blogPost, thumbnail } = item.fields;
   return (
-    <Layout title={title}>
+    <Layout
+      title={title}
+      content={title}
+      card={`https:${thumbnail.fields.file.url}`}
+    >
       <Prose>
         <h2>{title}</h2>
-        {documentToReactComponents(blogPost)}
+        {documentToReactComponents(blogPost, BLOCK_IMAGE)}
       </Prose>
     </Layout>
   );

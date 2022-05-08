@@ -3,8 +3,10 @@ import Layout from "../../components/layout/layout";
 import { createClient } from "contentful";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Center, Spinner } from "@chakra-ui/react";
+import { Center, Heading, Spinner } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
+import SocialMediaShare from "../../components/SocialMediaShare";
+import DisqusComments from "../../components/comment";
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -74,7 +76,7 @@ export default function BlogPost({ item }) {
         </Center>
       </Layout>
     );
-  const { title, blogPost, thumbnail } = item.fields;
+  const { title, blogPost, thumbnail, slug } = item.fields;
   return (
     <Layout
       title={title}
@@ -85,6 +87,8 @@ export default function BlogPost({ item }) {
         <h2>{title}</h2>
         {documentToReactComponents(blogPost, BLOCK_IMAGE)}
       </Prose>
+      <SocialMediaShare slug={slug} />
+      <DisqusComments slug={slug} title={title} />
     </Layout>
   );
 }

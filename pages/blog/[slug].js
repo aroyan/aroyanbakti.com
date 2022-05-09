@@ -77,7 +77,6 @@ export default function BlogPost({ item }) {
       </Layout>
     );
   const { title, blogPost, thumbnail, slug } = item.fields;
-  console.log(<DisqusComments slug={slug} title={title} />);
   return (
     <Layout
       title={title}
@@ -88,7 +87,9 @@ export default function BlogPost({ item }) {
         <h2>{title}</h2>
         {documentToReactComponents(blogPost, BLOCK_IMAGE)}
       </Prose>
-      <SocialMediaShare slug={slug} />
+      <Center mb={"8"}>
+        <SocialMediaShare slug={slug} />
+      </Center>
       <DisqusComments slug={slug} title={title} />
     </Layout>
   );

@@ -1,15 +1,15 @@
 import { DiscussionEmbed } from "disqus-react";
+
 const DisqusComments = ({ slug, title }) => {
-  const disqusShortname = "aroyanbakti";
-  const disqusConfig = {
-    url: `https://www.aroyanbakti.com/blog/${slug}`,
-    identifier: slug,
-    title: title,
-  };
   return (
-    <div>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-    </div>
+    <DiscussionEmbed
+      shortname={"aroyanbakti"}
+      config={{
+        url: `https://www.aroyanbakti.com/blog/${slug}`,
+        identifier: slug,
+        title: title,
+      }}
+    />
   );
 };
 export default DisqusComments;

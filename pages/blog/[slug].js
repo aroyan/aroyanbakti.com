@@ -77,6 +77,7 @@ export default function BlogPost({ item }) {
       </Layout>
     );
   const { title, blogPost, thumbnail, slug } = item.fields;
+  console.log(<DisqusComments slug={slug} title={title} />);
   return (
     <Layout
       title={title}

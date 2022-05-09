@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import BlogCard from "../../components/BlogCard";
 import BlogLayout from "../../components/layout/blogLayout";
 
@@ -25,6 +25,7 @@ export default function BlogHome({ blogV2 }) {
   // console.log(blogV2);
   return (
     <BlogLayout title={"Blog"}>
+      <Heading>Blog</Heading>
       {blogV2.map((blog) => (
         <BlogCard key={blog.sys.id} blog={blog} />
       ))}

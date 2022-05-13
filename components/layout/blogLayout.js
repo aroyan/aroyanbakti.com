@@ -9,13 +9,13 @@ export default function BlogLayout({ children, title }) {
       <CustomHead title={title} />
       <Box bg={BG} maxW={"full"} as={"main"}>
         <Navbar />
-        <Center py={"8"}>
+        <Center pb={"8"}>
           <Grid
             templateColumns={{ md: "repeat(2, 1fr)" }}
             gap={"8"}
             width={"container.md"}
             justifyContent={"center"}
-            // alignItems={"center"}
+            margin={{ base: "8" }}
           >
             {children}
           </Grid>

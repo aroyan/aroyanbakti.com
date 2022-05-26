@@ -1,4 +1,4 @@
-# Portfolio-v2
+# Portfolio
 
 My personal portfolio page, check out [aroyanbakti.com](https://aroyanbakti.com)
 

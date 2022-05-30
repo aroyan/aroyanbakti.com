@@ -3,7 +3,7 @@ import CustomHead from "./headMeta";
 import Navbar from "../navbar";
 
 export default function BlogLayout({ children, title }) {
-  const BG = useColorModeValue("#fdf6e3", "#002b36");
+  const BG = useColorModeValue("#fdf6e3", "#1a202c");
   return (
     <>
       <CustomHead title={title} />

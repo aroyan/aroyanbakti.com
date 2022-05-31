@@ -78,7 +78,6 @@ export default function BlogPost({ item }) {
       </Layout>
     );
   const { title, blogPost, thumbnail, slug } = item.fields;
-  // const { tags } = item.metadata;
   return (
     <Layout
       title={title}
@@ -92,7 +91,7 @@ export default function BlogPost({ item }) {
       <Center mb={"8"}>
         <SocialMediaShare slug={slug} />
       </Center>
-      {/* <DisqusComments slug={slug} title={title} /> */}
+      <DisqusComments slug={slug} title={title} />
     </Layout>
   );
 }

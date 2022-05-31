@@ -5,7 +5,12 @@ import Socials from "../components/socialList";
 export default function Home() {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
   return (
-    <Layout title={"Home"}>
+    <Layout
+      title={"Home"}
+      content={
+        "Hello, my name is Aroyan Bakti Setiawan. I'm a frontend developer based in Indonesia. This website is my portfolio and I write a blog too"
+      }
+    >
       <VStack mt={"36"} h={"calc(62vh)"}>
         <Heading
           as={"h1"}

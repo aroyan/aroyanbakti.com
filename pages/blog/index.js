@@ -22,6 +22,7 @@ export async function getStaticProps() {
 }
 
 export default function BlogHome({ blogV2 }) {
+  console.log(blogV2);
   // console.log(blogV2);
   return (
     <BlogLayout title={"Blog"}>

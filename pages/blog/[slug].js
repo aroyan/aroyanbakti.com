@@ -68,6 +68,7 @@ const BLOCK_IMAGE = {
 };
 
 export default function BlogPost({ item }) {
+  // console.log(item);
   if (!item)
     return (
       <Layout title={"Loading"}>
@@ -77,6 +78,7 @@ export default function BlogPost({ item }) {
       </Layout>
     );
   const { title, blogPost, thumbnail, slug } = item.fields;
+  // const { tags } = item.metadata;
   return (
     <Layout
       title={title}
@@ -90,7 +92,7 @@ export default function BlogPost({ item }) {
       <Center mb={"8"}>
         <SocialMediaShare slug={slug} />
       </Center>
-      <DisqusComments slug={slug} title={title} />
+      {/* <DisqusComments slug={slug} title={title} /> */}
     </Layout>
   );
 }

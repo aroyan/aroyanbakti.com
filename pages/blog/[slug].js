@@ -3,10 +3,9 @@ import Layout from "../../components/layout/layout";
 import { createClient } from "contentful";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Center, Heading, Spinner } from "@chakra-ui/react";
+import { Box, Center, Heading, Spinner } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import SocialMediaShare from "../../components/SocialMediaShare";
-import DisqusComments from "../../components/comment";
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -68,6 +67,7 @@ const BLOCK_IMAGE = {
 };
 
 export default function BlogPost({ item }) {
+  // console.log(item);
   if (!item)
     return (
       <Layout title={"Loading"}>
@@ -90,7 +90,6 @@ export default function BlogPost({ item }) {
       <Center mb={"8"}>
         <SocialMediaShare slug={slug} />
       </Center>
-      <DisqusComments slug={slug} title={title} />
     </Layout>
   );
 }

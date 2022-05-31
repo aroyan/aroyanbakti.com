@@ -7,6 +7,9 @@ import {
   Stack,
   useColorModeValue,
   GridItem,
+  Tag,
+  VStack,
+  HStack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -23,6 +26,7 @@ export default function BlogCard({ blog }) {
     month: "long",
     day: "numeric",
   });
+  const { tags } = blog.metadata;
 
   return (
     <>
@@ -60,15 +64,22 @@ export default function BlogCard({ blog }) {
           </NextLink>
         </Box>
         <Stack>
-          <Text
-            color={"green.500"}
-            textTransform={"uppercase"}
-            fontWeight={800}
-            fontSize={"sm"}
-            letterSpacing={1.1}
-          >
-            Blog
-          </Text>
+          <HStack>
+            {tags.map((tag, index) => (
+              <Tag
+                key={index}
+                colorScheme={"teal"}
+                variant={"subtle"}
+                textTransform={"uppercase"}
+                fontWeight={800}
+                fontSize={"sm"}
+                letterSpacing={1.1}
+                cursor={"pointer"}
+              >
+                {tag.sys.id}
+              </Tag>
+            ))}
+          </HStack>
           {/* eslint-disable @next/next/link-passhref */}
           <NextLink href={`/blog/${slug}`}>
             <Link

@@ -15,6 +15,7 @@ export default function Navbar() {
       position={"sticky"}
       top={"0"}
       zIndex={"2"}
+      as={"nav"}
     >
       <Container maxW={{ base: "full", md: "container.md" }} p={"0"}>
         <Flex p={"4"} align={"center"} justifyContent={"space-between"}>

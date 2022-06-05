@@ -5,6 +5,7 @@ My personal portfolio page, check out [aroyanbakti.com](https://aroyanbakti.com)
 ## Getting Started
 
 First, clone this repo and install dependencies in your machine:
+> If you want to use `npm` instead of `yarn` make sure to delete `yarn.lock` file first
 
 ```bash
 npm install

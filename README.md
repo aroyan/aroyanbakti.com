@@ -26,3 +26,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [Next.js](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
+- [Contentful](https://www.contentful.com/)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

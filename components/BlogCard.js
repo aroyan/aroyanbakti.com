@@ -10,6 +10,8 @@ import {
   Tag,
   VStack,
   HStack,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -53,15 +55,15 @@ export default function BlogCard({ blog }) {
           cursor={"pointer"}
         >
           {/* eslint-disable @next/next/link-passhref */}
-          <NextLink href={`/blog/${slug}`}>
-            <Image
-              src={`https:${thumbnail.fields.file.url}`}
-              width={thumbnail.fields.file.details.image.width}
-              height={thumbnail.fields.file.details.image.height}
-              layout={"responsive"}
-              alt={title}
-            />
-          </NextLink>
+          {/* <NextLink href={`/blog/${slug}`}> */}
+          <Image
+            src={`https:${thumbnail.fields.file.url}`}
+            width={thumbnail.fields.file.details.image.width}
+            height={thumbnail.fields.file.details.image.height}
+            layout={"responsive"}
+            alt={title}
+          />
+          {/* </NextLink> */}
         </Box>
         <Stack>
           <HStack>
@@ -81,16 +83,16 @@ export default function BlogCard({ blog }) {
             ))}
           </HStack>
           {/* eslint-disable @next/next/link-passhref */}
-          <NextLink href={`/blog/${slug}`}>
-            <Link
-              fontSize={"xl"}
-              fontFamily={"body"}
-              color={useColorModeValue("gray.700", "white")}
-              _hover={{ textDecor: "none" }}
-            >
-              {title}
-            </Link>
-          </NextLink>
+          {/* <NextLink href={`/blog/${slug}`}> */}
+          <Link
+            fontSize={"xl"}
+            fontFamily={"body"}
+            color={useColorModeValue("gray.700", "white")}
+            _hover={{ textDecor: "none" }}
+          >
+            {title}
+          </Link>
+          {/* </NextLink> */}
         </Stack>
         <Stack mt={4} direction={"row"} spacing={4} align={"center"}>
           <Stack direction={"column"} spacing={0} fontSize={"sm"}>

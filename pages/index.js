@@ -9,8 +9,10 @@ import {
   Image,
   useBreakpointValue,
   Container,
+  Link,
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 import Layout from "../components/layout/layout";
 import Socials from "../components/socialList";
 
@@ -35,9 +37,9 @@ export default function Home() {
             fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
-            Create, Develop, & Maintain{" "}
+            Passionate about{" "}
             <Text as={"span"} color={"orange.400"}>
-              Frontend Related
+              Frontend Development
             </Text>
           </Heading>
           <Text color={"gray.500"} maxW={"3xl"}>
@@ -57,15 +59,11 @@ export default function Home() {
             >
               Contact Me
             </Button>
-            <Button
-              rounded={"full"}
-              px={6}
-              rightIcon={<ArrowForwardIcon />}
-              as={"a"}
-              href="/blog"
-            >
-              Read Blog
-            </Button>
+            <NextLink href="/blog" passHref>
+              <Button rounded={"full"} px={6} as={"a"} alignItems={"center"}>
+                Read Blog
+              </Button>
+            </NextLink>
           </Stack>
         </Stack>
       </Container>

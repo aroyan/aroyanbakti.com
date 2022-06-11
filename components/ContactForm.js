@@ -7,6 +7,8 @@ import {
   Button,
   Textarea,
   Text,
+  Box,
+  Flex,
 } from "@chakra-ui/react";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -24,24 +26,36 @@ export default function ContactForm() {
   }
 
   if (state.succeeded) {
-    return <Text colorScheme={"cyan"}>Thanks for joining!</Text>;
+    return <Text textAlign={"center"}>Thanks for your message!</Text>;
   }
   return (
     <FormControl onSubmit={handleSubmit} as="form" method="post">
       <FormLabel htmlFor="email">Email Address</FormLabel>
-      <Input id="email" type="email" name="email" placeholder="Email" mb="2" />
+      <Input id="email" type="email" name="email" placeholder="Email" mb="4" />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
       <FormLabel htmlFor="message">Message</FormLabel>
-      <Textarea id="message" name="message" placeholder="Message" mb="2" />
-      <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <ReCAPTCHA
-        ref={rechaptaRef}
-        sitekey="6LepxVwgAAAAAIse-Nm-igSDVmV5DU-Wl_NaFbGL"
-        onChange={onChange}
+      <Textarea
+        id="message"
+        name="message"
+        placeholder="Message"
+        mb="4"
+        isRequired
       />
-      <Button disabled={state.submitting} type="submit" colorScheme={"orange"}>
-        Submit
-      </Button>
+      <ValidationError prefix="Message" field="message" errors={state.errors} />
+      <Flex direction={"row"} justify="end" w="full" gap="4" wrap="wrap">
+        <ReCAPTCHA
+          ref={rechaptaRef}
+          sitekey="6LepxVwgAAAAAIse-Nm-igSDVmV5DU-Wl_NaFbGL"
+          onChange={onChange}
+        />
+        <Button
+          disabled={state.submitting}
+          type="submit"
+          colorScheme={"orange"}
+        >
+          Submit
+        </Button>
+      </Flex>
     </FormControl>
   );
 }

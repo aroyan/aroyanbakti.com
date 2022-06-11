@@ -9,11 +9,13 @@ import {
   Text,
   Box,
   Flex,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xrgjdlqg");
+  const outlineFormColor = useColorModeValue("blackAlpha.700", "gray.900");
   const rechaptaRef = React.createRef();
 
   const onSubmit = () => {
@@ -21,17 +23,20 @@ export default function ContactForm() {
     this.props.onSubmit(rechaptaValue);
   };
 
-  function onChange(value) {
-    console.log("Chapta value:", value);
-  }
-
   if (state.succeeded) {
     return <Text textAlign={"center"}>Thanks for your message!</Text>;
   }
   return (
     <FormControl onSubmit={handleSubmit} as="form" method="post">
       <FormLabel htmlFor="email">Email Address</FormLabel>
-      <Input id="email" type="email" name="email" placeholder="Email" mb="4" />
+      <Input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Email"
+        mb="4"
+        borderColor={outlineFormColor}
+      />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
       <FormLabel htmlFor="message">Message</FormLabel>
       <Textarea
@@ -46,7 +51,6 @@ export default function ContactForm() {
         <ReCAPTCHA
           ref={rechaptaRef}
           sitekey="6LepxVwgAAAAAIse-Nm-igSDVmV5DU-Wl_NaFbGL"
-          onChange={onChange}
         />
         <Button
           disabled={state.submitting}

@@ -15,7 +15,6 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import Layout from "../components/layout/layout";
 import Socials from "../components/socialList";
-import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
@@ -67,7 +66,6 @@ export default function Home() {
             </NextLink>
           </Stack>
         </Stack>
-        <ContactForm />
       </Container>
     </Layout>
   );

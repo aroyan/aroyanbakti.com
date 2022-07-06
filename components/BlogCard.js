@@ -55,15 +55,15 @@ export default function BlogCard({ blog }) {
           cursor={"pointer"}
         >
           {/* eslint-disable @next/next/link-passhref */}
-          {/* <NextLink href={`/blog/${slug}`}> */}
-          <Image
-            src={`https:${thumbnail.fields.file.url}`}
-            width={thumbnail.fields.file.details.image.width}
-            height={thumbnail.fields.file.details.image.height}
-            layout={"responsive"}
-            alt={title}
-          />
-          {/* </NextLink> */}
+          <NextLink href={`/blog/${slug}`}>
+            <Image
+              src={`https:${thumbnail.fields.file.url}`}
+              width={thumbnail.fields.file.details.image.width}
+              height={thumbnail.fields.file.details.image.height}
+              layout={"responsive"}
+              alt={title}
+            />
+          </NextLink>
         </Box>
         <Stack>
           <HStack>

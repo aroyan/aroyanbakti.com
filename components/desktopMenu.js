@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Flex, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function DesktopMenu() {
@@ -17,6 +17,9 @@ export default function DesktopMenu() {
       <Box ml={"4"} p={"2"} _hover={hoverEffect}>
         <Link href={"/blog"}>Blog</Link>
       </Box>
+      <Button ml={"4"} p={"2"} colorScheme="orange">
+        <Link href={"/contact"}>Contact</Link>
+      </Button>
     </Flex>
   );
 }

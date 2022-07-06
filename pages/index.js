@@ -48,17 +48,19 @@ export default function Home() {
             freelance work
           </Text>
           <Stack spacing={6} direction={"row"}>
-            <Button
-              rounded={"full"}
-              px={6}
-              colorScheme={"orange"}
-              bg={"orange.400"}
-              _hover={{ bg: "orange.500" }}
-              as={"a"}
-              href="mailto:abssneakers@gmail.com"
-            >
-              Contact Me
-            </Button>
+            <NextLink href={"/contact"} passHref>
+              <Button
+                rounded={"full"}
+                px={6}
+                colorScheme={"orange"}
+                bg={"orange.400"}
+                _hover={{ bg: "orange.500" }}
+                as={"a"}
+                href="mailto:abssneakers@gmail.com"
+              >
+                Contact Me
+              </Button>
+            </NextLink>
             <NextLink href="/blog" passHref>
               <Button rounded={"full"} px={6} as={"a"} alignItems={"center"}>
                 Read Blog

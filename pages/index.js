@@ -18,6 +18,7 @@ import Socials from "../components/socialList";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
+  console.log(process.env.NODE_ENV);
   return (
     <Layout
       title={"Home"}

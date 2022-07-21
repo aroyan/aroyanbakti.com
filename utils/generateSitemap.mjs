@@ -1,5 +1,4 @@
-import fs, { writeFile, writeFileSync } from "fs";
-import { createClient } from "contentful";
+import fs from "fs";
 
 const generate = async () => {
   const baseUrl = "https://www.aroyanbakti.com";
@@ -24,34 +23,9 @@ const generate = async () => {
       return `${baseUrl}/${staticPagePath}`;
     });
 
-  const getAllBlogPost = async () => {
-    const client = createClient({
-      space: `${process.env.CONTENTFUL_SPACE_ID}`,
-      accessToken: `${process.env.CONTENTFUL_ACCESS_KEY}`,
-    });
-
-    const res = await client.getEntries({
-      content_type: "blogV2",
-    });
-    return {
-      props: {
-        blogV2: res.items,
-      },
-      revalidate: 3600,
-    };
-  };
-
-  const blogs = await getAllBlogPost();
-  const blogsData = blogs.props.blogV2;
-  const blogsDataUrl = blogsData.map(
-    (item) => `${baseUrl}/blog/${item.fields.slug}`
-  );
-
-  const allPages = [...staticPages, ...blogsDataUrl];
-
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        ${allPages
+        ${staticPages
           .map((url) => {
             return `
                 <url>

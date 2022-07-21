@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { writeFileSync, readdirSync } from "fs";
 
 const generate = async () => {
   const baseUrl = "https://www.aroyanbakti.com";

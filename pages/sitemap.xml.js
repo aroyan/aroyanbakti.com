@@ -5,10 +5,11 @@ import { createClient } from "contentful";
 const Sitemap = () => {};
 
 export const getServerSideProps = async ({ res }) => {
-  const baseUrl = {
-    development: "http://localhost:3000",
-    production: "https://www.aroyanbakti.com",
-  }[process.env.NODE_ENV];
+  // const baseUrl = {
+  //   development: "http://localhost:3000",
+  //   production: "https://www.aroyanbakti.com",
+  // }[process.env.NODE_ENV];
+  const baseUrl = "https://www.aroyanbakti.com";
 
   const staticPages = fs
     .readdirSync("pages")

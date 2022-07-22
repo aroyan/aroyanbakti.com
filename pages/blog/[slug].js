@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Box, Center, Heading, Spinner } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import SocialMediaShare from "../../components/SocialMediaShare";
+import ShareButton from "../../components/ShareButton";
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -88,7 +89,8 @@ export default function BlogPost({ item }) {
         {documentToReactComponents(blogPost, BLOCK_IMAGE)}
       </Prose>
       <Center mb={"8"}>
-        <SocialMediaShare slug={slug} />
+        <ShareButton title={title} url={slug} text={title} />
+        {/* <SocialMediaShare slug={slug} /> */}
       </Center>
     </Layout>
   );

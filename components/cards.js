@@ -20,7 +20,7 @@ export default function BlogPostWithImage({
   codeLink,
   previewLink,
 }) {
-  const bgColor = useColorModeValue("white", "blackAlpha.600");
+  const bgColor = useColorModeValue("#eee8d5", "gray.900");
   const headingColor = useColorModeValue("gray.700", "white");
   const textColor = useColorModeValue("gray.700", "#a0afc4");
   return (

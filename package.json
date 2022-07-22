@@ -15,6 +15,7 @@
     "@contentful/rich-text-types": "^15.12.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@formspree/react": "^2.3.0",
     "@nikolovlazar/chakra-ui-prose": "^1.0.8",
     "contentful": "^9.1.28",
     "framer-motion": "^6",
@@ -22,6 +23,7 @@
     "next-share": "^0.13.0",
     "react": "^18.0.0-rc.3",
     "react-dom": "^18.0.0-rc.3",
+    "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {

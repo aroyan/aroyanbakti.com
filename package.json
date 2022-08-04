@@ -16,6 +16,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@formspree/react": "^2.3.0",
+    "@next/bundle-analyzer": "^12.2.3",
     "@nikolovlazar/chakra-ui-prose": "^1.0.8",
     "contentful": "^9.1.28",
     "framer-motion": "^6",

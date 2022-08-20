@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import { Heading, Stack, Flex, Container } from "@chakra-ui/react";
 import { ProjectListSection, CTASection } from "../components/Homepage";
 

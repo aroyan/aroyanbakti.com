@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 import ContactForm from "../../components/ContactForm";
 
 const Contact = () => {

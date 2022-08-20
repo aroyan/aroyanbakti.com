@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { Heading, Text } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import { getPostFromSlug, getSlugs } from "../../utils/api";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 import "highlight.js/styles/tokyo-night-dark.css";
 
 const Markdown = ({ post }) => {

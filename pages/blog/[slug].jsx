@@ -5,9 +5,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { getPostFromSlug, getSlugs } from "../../utils/api";
 import { Heading, Text } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
+import { getPostFromSlug, getSlugs } from "../../utils/api";
 import Layout from "../../components/Layout";
 import "highlight.js/styles/tokyo-night-dark.css";
 

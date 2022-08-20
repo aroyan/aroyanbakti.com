@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BlogLayout from "../../components/layout/BlogLayout";
+import BlogLayout from "../../components/Layout/BlogLayout";
 import BlogCard from "../../components/BlogCard";
 import { getAllPosts } from "../../utils/api";
 

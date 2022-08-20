@@ -1,10 +1,10 @@
-import Layout from "../../components/layout/layout";
-import BlogPostWithImage from "../../components/cards";
+import Layout from "../../components/Layout";
+import ProjectCard from "../../components/ProjectCard";
 
 export default function projects() {
   return (
     <Layout title={"Projects"}>
-      <BlogPostWithImage
+      <ProjectCard
         imageLink={"/images/chat-app.png"}
         altImage={"Chat App CSS Illustration"}
         heading={"Chat App CSS Illustration"}
@@ -12,7 +12,7 @@ export default function projects() {
         codeLink={"https://github.com/aroyan/chat-app"}
         previewLink={"https://aroyan.github.io/chat-app"}
       />
-      <BlogPostWithImage
+      <ProjectCard
         imageLink={"/images/drum-machine.png"}
         altImage={"Drum Machine Preview"}
         heading={"Simple Drum Machine"}

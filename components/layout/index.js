@@ -1,6 +1,6 @@
 import { Box, Container, useColorModeValue } from "@chakra-ui/react";
 import CustomHead from "./HeadMeta";
-import Navbar from "../navbar";
+import Navbar from "../Navbar";
 
 export default function Layout({ children, title, content, card }) {
   const BG = useColorModeValue("#fdf6e3", "#1a202c");

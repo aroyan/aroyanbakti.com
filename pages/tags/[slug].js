@@ -6,7 +6,6 @@ import { getAllPosts } from "../../utils/api";
 import { Heading } from "@chakra-ui/react";
 
 export default function Tags({ slug, meta }) {
-  console.log(meta);
   return (
     <>
       <BlogLayout>

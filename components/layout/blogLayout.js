@@ -5,8 +5,8 @@ import {
   Heading,
   useColorModeValue,
 } from "@chakra-ui/react";
-import CustomHead from "./headMeta";
-import Navbar from "../navbar";
+import CustomHead from "./HeadMeta";
+import Navbar from "../Navbar";
 
 export default function BlogLayout({ children, title }) {
   const BG = useColorModeValue("#fdf6e3", "#1a202c");

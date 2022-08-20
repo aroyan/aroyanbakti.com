@@ -1,5 +1,5 @@
 import { Container, Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
-import Logo from "./logo";
+import Logo from "./Logo";
 import ToggleDarkMode from "./ToggleButton";
 import NavItem from "./NavItem";
 

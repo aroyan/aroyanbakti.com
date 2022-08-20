@@ -34,7 +34,7 @@ const BlogCard = ({ meta }) => {
       <Flex wrap={"wrap"} gap="1">
         {tags.map((tag) => (
           <Badge key={tag} colorScheme="cyan">
-            <Link href={`tags/${tag}`}>{tag}</Link>
+            <Link href={`/tags/${tag}`}>{tag}</Link>
           </Badge>
         ))}
       </Flex>

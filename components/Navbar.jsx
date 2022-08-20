@@ -1,7 +1,7 @@
 import { Container, Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
 import Logo from "./logo";
-import ToggleDarkMode from "./toggle-button";
-import NavItem from "./navItem";
+import ToggleDarkMode from "./ToggleButton";
+import NavItem from "./NavItem";
 
 export default function Navbar() {
   const navBg = useColorModeValue("#eee8d5", "gray.900");

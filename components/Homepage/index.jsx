@@ -1,6 +1,6 @@
 import { Heading, Text, Stack, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
-import BlogPostWithImage from "../cards";
+import BlogPostWithImage from "../Cards";
 
 export const CTASection = () => {
   return (

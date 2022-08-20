@@ -1,6 +1,6 @@
 import { Heading, Text, Stack, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
-import BlogPostWithImage from "../cards";
+import ProjectCard from "../ProjectCard";
 
 export const CTASection = () => {
   return (
@@ -55,7 +55,7 @@ export const ProjectListSection = () => {
   return (
     <>
       {" "}
-      <BlogPostWithImage
+      <ProjectCard
         imageLink={"/images/chat-app.png"}
         altImage={"Chat App CSS Illustration"}
         heading={"Chat App CSS Illustration"}
@@ -63,7 +63,7 @@ export const ProjectListSection = () => {
         codeLink={"https://github.com/aroyan/chat-app"}
         previewLink={"https://aroyan.github.io/chat-app"}
       />
-      <BlogPostWithImage
+      <ProjectCard
         imageLink={"/images/drum-machine.png"}
         altImage={"Drum Machine Preview"}
         heading={"Simple Drum Machine"}

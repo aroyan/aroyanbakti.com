@@ -11,8 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-// Extracting props object
-export default function BlogPostWithImage({
+export default function ProjectCard({
   imageLink,
   altImage,
   heading,

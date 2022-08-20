@@ -2,13 +2,23 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
-const nextConfig = {
-  reactStrictMode: false,
-  images: {
-    domains: ["images.ctfassets.net"],
+
+const withPlugins = require("next-compose-plugins");
+
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
   },
+});
+
+const nextConfig = {
+  reactStrictMode: true,
 };
 
-module.exports = (phase, nextConfig) => {
-  return withBundleAnalyzer(nextConfig);
-};
+module.exports = withPlugins(
+  [withMDX({ pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"] })],
+  [withBundleAnalyzer],
+  nextConfig
+);

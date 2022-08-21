@@ -20,6 +20,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xrgjdlqg");
   const rechaptaRef = React.createRef();
+  const bgColor = useColorModeValue("white", "gray.700");
+  const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
 
   const onSubmit = () => {
     const rechaptaValue = rechaptaRef.current.getValue();
@@ -30,13 +32,7 @@ export default function ContactForm() {
     return <Text textAlign={"center"}>Thanks for your message!</Text>;
   }
   return (
-    <Box
-      bg={useColorModeValue("white", "gray.700")}
-      borderRadius="lg"
-      p={8}
-      color={useColorModeValue("gray.700", "whiteAlpha.900")}
-      shadow="base"
-    >
+    <Box bg={bgColor} borderRadius="lg" p={8} color={textColor} shadow="base">
       <VStack spacing={5}>
         <FormControl isRequired onSubmit={handleSubmit} as="form" method="post">
           <FormLabel htmlFor="email">Email</FormLabel>

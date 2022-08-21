@@ -8,14 +8,17 @@ import {
   Textarea,
   Text,
   Box,
+  InputGroup,
+  VStack,
+  InputLeftElement,
   Flex,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xrgjdlqg");
-  const outlineFormColor = useColorModeValue("blackAlpha.700", "gray.900");
   const rechaptaRef = React.createRef();
 
   const onSubmit = () => {
@@ -27,39 +30,65 @@ export default function ContactForm() {
     return <Text textAlign={"center"}>Thanks for your message!</Text>;
   }
   return (
-    <FormControl onSubmit={handleSubmit} as="form" method="post">
-      <FormLabel htmlFor="email">Email Address</FormLabel>
-      <Input
-        id="email"
-        type="email"
-        name="email"
-        placeholder="Email"
-        mb="4"
-        borderColor={outlineFormColor}
-      />
-      <ValidationError prefix="Email" field="email" errors={state.errors} />
-      <FormLabel htmlFor="message">Message</FormLabel>
-      <Textarea
-        id="message"
-        name="message"
-        placeholder="Message"
-        mb="4"
-        isRequired
-      />
-      <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <Flex direction={"row"} justify="end" w="full" gap="4" wrap="wrap">
+    <Box
+      bg={useColorModeValue("white", "gray.700")}
+      borderRadius="lg"
+      p={8}
+      color={useColorModeValue("gray.700", "whiteAlpha.900")}
+      shadow="base"
+    >
+      <VStack spacing={5}>
+        <FormControl isRequired onSubmit={handleSubmit} as="form" method="post">
+          <FormLabel htmlFor="email">Email</FormLabel>
+
+          <InputGroup>
+            <InputLeftElement>
+              <MdOutlineEmail />
+            </InputLeftElement>
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+            />
+          </InputGroup>
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </FormControl>
+
+        <FormControl isRequired>
+          <FormLabel htmlFor="message">Message</FormLabel>
+
+          <Textarea
+            name="message"
+            id="message"
+            placeholder="Your Message"
+            rows={6}
+            resize="none"
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+        </FormControl>
+
         <ReCAPTCHA
           ref={rechaptaRef}
           sitekey="6LepxVwgAAAAAIse-Nm-igSDVmV5DU-Wl_NaFbGL"
         />
         <Button
-          disabled={state.submitting}
+          colorScheme="blue"
+          bg="blue.400"
+          color="white"
+          _hover={{
+            bg: "blue.500",
+          }}
+          isFullWidth
           type="submit"
-          colorScheme={"orange"}
         >
-          Submit
+          Send Message
         </Button>
-      </Flex>
-    </FormControl>
+      </VStack>
+    </Box>
   );
 }

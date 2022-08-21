@@ -33,15 +33,15 @@ export default function NavItem() {
             <HamburgerIcon />
           </MenuButton>
           <MenuList alignItems={"center"}>
-            <MenuItem>
-              <Link href={"/projects"}>Projects</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href={"/blog"}>Blog</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href={"/contact"}>Contact</Link>
-            </MenuItem>
+            <Link href={"/projects"} passHref>
+              <MenuItem>Projects</MenuItem>
+            </Link>
+            <Link href={"/blog"} passHref>
+              <MenuItem>Blog</MenuItem>
+            </Link>
+            <Link href={"/contact"} passHref>
+              <MenuItem>Contact</MenuItem>
+            </Link>
           </MenuList>
         </Menu>
       </Box>

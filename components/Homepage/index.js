@@ -9,8 +9,10 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import NextLink from "next/link";
 import ProjectCard from "../ProjectCard";
+import { GoMarkGithub } from "react-icons/go";
+import { GrLinkedin } from "react-icons/gr";
+import { IconContext } from "react-icons";
 
 export const CTASection = () => {
   return (
@@ -59,32 +61,20 @@ export const CTASection = () => {
           </Stack>
         </VStack>
       </Flex>
-    </>
-  );
-};
-
-export const ProjectListSection = () => {
-  return (
-    <>
-      {" "}
-      <ProjectCard
-        imageLink={"/images/chat-app.png"}
-        altImage={"Chat App CSS Illustration"}
-        heading={"Chat App CSS Illustration"}
-        description={"Create a Illustration using CSS"}
-        codeLink={"https://github.com/aroyan/chat-app"}
-        previewLink={"https://aroyan.github.io/chat-app"}
-      />
-      <ProjectCard
-        imageLink={"/images/drum-machine.png"}
-        altImage={"Drum Machine Preview"}
-        heading={"Simple Drum Machine"}
-        description={
-          "Simple Drum Machine built with React and ChakraUI for Front End Libraries Development projects by freeCodeCamp"
-        }
-        codeLink={"https://github.com/aroyan/drum-machine"}
-        previewLink={"https://drum-machine-arbase.vercel.app/"}
-      />
+      <Flex justify="center">
+        <IconContext.Provider value={{ className: "shared-class", size: 40 }}>
+          <a href="https://github.com/aroyan" target="_blank" rel="noreferrer">
+            <GoMarkGithub style={{ marginRight: "32px" }} />
+          </a>
+          <a
+            href="https://linkedin.com/in/aroyanbakti"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GrLinkedin />
+          </a>
+        </IconContext.Provider>
+      </Flex>
     </>
   );
 };

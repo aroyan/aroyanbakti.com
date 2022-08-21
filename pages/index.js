@@ -11,18 +11,13 @@ export default function Home() {
       }
     >
       <Container maxW={"5xl"}>
-        <Stack
-          textAlign={"center"}
-          align={"center"}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
-        >
+        <Stack spacing={{ base: 8, md: 10 }} py={{ base: 20, md: 28 }}>
           <CTASection />
         </Stack>
-        <Stack spacing={{ base: 8, md: 10 }} py={{ base: 20, md: 28 }}>
+        {/* <Stack spacing={{ base: 8, md: 10 }} py={{ base: 20, md: 28 }}>
           <Heading as="h2">Projects</Heading>
           <ProjectListSection />
-        </Stack>
+        </Stack> */}
       </Container>
     </Layout>
   );

@@ -1,10 +1,11 @@
 # Portfolio
 
-My personal portfolio page, check out [aroyanbakti.com](https://aroyanbakti.com)
+My portfolio page, check out [aroyanbakti.com](https://aroyanbakti.com)
 
 ## Getting Started
 
-First, clone this repo and install dependencies in your machine:
+Clone this repo and install dependencies on your machine:
+
 > If you want to use `npm` instead of `yarn` make sure to delete `yarn.lock` file first
 
 ```bash
@@ -13,7 +14,7 @@ npm install
 yarn
 ```
 
-Second, run the development server:
+And run the development server:
 
 ```bash
 npm run dev
@@ -27,7 +28,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [Next.js](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
-- [Contentful](https://www.contentful.com/)
 
 ## License
 

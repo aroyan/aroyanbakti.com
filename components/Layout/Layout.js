@@ -3,11 +3,10 @@ import CustomHead from "./HeadMeta";
 import Navbar from "../Navbar";
 
 export default function Layout({ children, title, content, card }) {
-  const BG = useColorModeValue("#fdf6e3", "#1a202c");
   return (
     <>
       <CustomHead title={title} content={content} card={card} />
-      <Box bg={BG} maxW={"full"} as={"main"}>
+      <Box maxW={"full"} as={"main"}>
         <Navbar />
         <Container
           maxW={"container.md"}

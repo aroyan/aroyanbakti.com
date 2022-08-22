@@ -16,7 +16,11 @@ const BlogHead = ({ title, thumbnail, description }) => {
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={thumbnail ? thumbnail : "/images/card_preview.png"}
+        content={
+          thumbnail
+            ? thumbnail
+            : "https://raw.githubusercontent.com/aroyan/aroyanbakti.com/main/public/images/card_preview.png"
+        }
       />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.aroyanbakti.com" />
@@ -24,7 +28,11 @@ const BlogHead = ({ title, thumbnail, description }) => {
       <meta property="twitter:description" content={description} />
       <meta
         property="twitter:image"
-        content={thumbnail ? thumbnail : "/images/card_preview.png"}
+        content={
+          thumbnail
+            ? thumbnail
+            : "https://raw.githubusercontent.com/aroyan/aroyanbakti.com/main/public/images/card_preview.png"
+        }
       />
     </Head>
   );

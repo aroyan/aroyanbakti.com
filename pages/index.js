@@ -7,7 +7,7 @@ export default function Home() {
     <Layout
       title={"Home"}
       content={
-        "Hello, my name is Aroyan Bakti Setiawan. I'm a frontend developer based in Indonesia. This website is my portfolio and I write a blog too"
+        "Hello, my name is Aroyan Bakti Setiawan. I'm a frontend developer based in Indonesia"
       }
     >
       <Container maxW={"5xl"}>

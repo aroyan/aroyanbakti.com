@@ -63,6 +63,8 @@ export default function ProjectCard({
           <Link
             href={previewLink}
             isExternal
+            rel="noreferrer"
+            target="_blank"
             _hover={{ textDecor: "underline" }}
           >
             Preview <ExternalLinkIcon mx="2px" />

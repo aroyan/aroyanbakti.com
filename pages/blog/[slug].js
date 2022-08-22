@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Head from "next/head";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
@@ -9,19 +8,21 @@ import { Heading, Text } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import { getPostFromSlug, getSlugs } from "../../utils/api";
 import Layout from "../../components/Layout/Layout";
+import BlogHead from "../../components/BlogHead";
 import "highlight.js/styles/tokyo-night-dark.css";
 
 const Markdown = ({ post }) => {
+  const [_, date, month, year, ...rest] = new Date(post.meta.date)
+    .toUTCString()
+    .split(" ");
   return (
     <>
-      <Head>
-        <title>{post.meta.title} | Aroyan</title>
-      </Head>
+      <BlogHead title={post.meta.title} description={post.meta.excerpt} />
       <Layout>
-        <Text>{new Date(post.meta.date).toString()}</Text>
         <Prose>
           <MDXRemote {...post.source} components={{ Image }} />
         </Prose>
+        <Text textAlign="center">{`${date} ${month} ${year}`}</Text>
       </Layout>
     </>
   );

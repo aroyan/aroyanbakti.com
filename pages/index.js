@@ -1,6 +1,6 @@
+import { Container, Stack } from "@chakra-ui/react";
+import { CTASection } from "../components/Homepage";
 import Layout from "../components/Layout/Layout";
-import { Heading, Stack, Flex, Container, HStack } from "@chakra-ui/react";
-import { ProjectListSection, CTASection } from "../components/Homepage";
 
 export default function Home() {
   return (

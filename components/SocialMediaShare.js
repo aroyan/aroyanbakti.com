@@ -1,4 +1,3 @@
-import { HStack, SimpleGrid, Text } from "@chakra-ui/react";
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -11,6 +10,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "next-share";
+import { HStack, SimpleGrid, Text } from "@chakra-ui/react";
 
 export default function SocialMediaShare({ slug }) {
   return (

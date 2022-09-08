@@ -1,11 +1,8 @@
-import Image from "next/image";
-import Layout from "../../components/Layout/Layout";
-import BlogLayout from "../../components/Layout/BlogLayout";
 import BlogCard from "../../components/BlogCard";
+import BlogLayout from "../../components/Layout/BlogLayout";
 import { getAllPosts } from "../../utils/api";
-import { Heading } from "@chakra-ui/react";
 
-export default function Tags({ slug, meta }) {
+export default function Tags({ meta }) {
   return (
     <>
       <BlogLayout>
@@ -31,6 +28,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const posts = getAllPosts();
+  // eslint-disable-next-line no-undef
   const tags = new Set(posts.map((post) => post.meta.tags).flat());
   const paths = Array.from(tags).map((tag) => ({ params: { slug: tag } }));
 

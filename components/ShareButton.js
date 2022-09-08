@@ -1,4 +1,4 @@
-import { Button, Badge } from "@chakra-ui/react";
+import { Badge, Button } from "@chakra-ui/react";
 import { useState } from "react";
 
 const ShareButton = ({ title, text, url }) => {

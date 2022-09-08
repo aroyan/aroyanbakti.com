@@ -1,15 +1,15 @@
-import Image from "next/image";
 import {
   Box,
   Center,
-  Heading,
-  Text,
-  Stack,
-  useColorModeValue,
-  Link,
   Divider,
+  Heading,
+  Link,
+  Stack,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import Image from "next/image";
 
 export default function ProjectCard({
   imageLink,

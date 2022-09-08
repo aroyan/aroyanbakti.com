@@ -1,12 +1,12 @@
+import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
 import {
+  Button,
   Link,
-  VStack,
-  useColorModeValue,
   List,
   ListItem,
-  Button,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
 
 export default function Socials() {
   const githubLogo = useColorModeValue("#333", "#f0f6fc");

@@ -1,4 +1,4 @@
-import { Box, Container, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import CustomHead from "./HeadMeta";
 import Navbar from "../Navbar";
 

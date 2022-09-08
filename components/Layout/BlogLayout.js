@@ -1,10 +1,4 @@
-import {
-  Box,
-  Center,
-  Grid,
-  Heading,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Center, Grid } from "@chakra-ui/react";
 import CustomHead from "./HeadMeta";
 import Navbar from "../Navbar";
 

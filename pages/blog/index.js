@@ -1,6 +1,5 @@
-import Image from "next/image";
-import BlogLayout from "../../components/Layout/BlogLayout";
 import BlogCard from "../../components/BlogCard";
+import BlogLayout from "../../components/Layout/BlogLayout";
 import { getAllPosts } from "../../utils/api";
 
 const Blog = ({ posts }) => {

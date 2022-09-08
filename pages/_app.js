@@ -1,9 +1,9 @@
+import * as ga from "../lib/ga";
+import { ChakraProvider } from "@chakra-ui/react";
+import Script from "next/script";
+import theme from "../utils/theme";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../utils/theme";
-import * as ga from "../lib/ga";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

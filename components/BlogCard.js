@@ -1,17 +1,9 @@
+import { Badge, Flex, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import {
-  Badge,
-  HStack,
-  Box,
-  Heading,
-  Text,
-  LinkBox,
-  LinkOverlay,
-  Flex,
-} from "@chakra-ui/react";
 
 const BlogCard = ({ meta }) => {
   const { title, slug, excerpt, date, tags } = meta;
+  // eslint-disable-next-line no-unused-vars
   const [_, month, dt, year, ...rest] = new Date(date).toString().split(" ");
 
   return (

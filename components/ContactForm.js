@@ -1,20 +1,19 @@
-import { useForm, ValidationError } from "@formspree/react";
-import React from "react";
 import {
+  Box,
+  Button,
   FormControl,
   FormLabel,
   Input,
-  Button,
-  Textarea,
-  Text,
-  Box,
   InputGroup,
-  VStack,
   InputLeftElement,
-  Flex,
+  Text,
+  Textarea,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { useForm, ValidationError } from "@formspree/react";
+import { MdOutlineEmail } from "react-icons/md";
+import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
@@ -23,10 +22,10 @@ export default function ContactForm() {
   const bgColor = useColorModeValue("white", "gray.700");
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
 
-  const onSubmit = () => {
-    const rechaptaValue = rechaptaRef.current.getValue();
-    this.props.onSubmit(rechaptaValue);
-  };
+  // const onSubmit = () => {
+  //   const rechaptaValue = rechaptaRef.current.getValue();
+  //   this.props.onSubmit(rechaptaValue);
+  // };
 
   if (state.succeeded) {
     return <Text textAlign={"center"}>Thanks for your message!</Text>;

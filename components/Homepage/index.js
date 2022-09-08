@@ -1,18 +1,15 @@
 import {
-  Box,
-  Heading,
-  Text,
-  Stack,
   Button,
   Flex,
-  VStack,
+  Stack,
+  Text,
   useBreakpointValue,
+  VStack,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import ProjectCard from "../ProjectCard";
 import { GoMarkGithub } from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
 import { IconContext } from "react-icons";
+import Link from "next/link";
 
 export const CTASection = () => {
   return (

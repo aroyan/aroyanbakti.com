@@ -1,17 +1,14 @@
 import {
-  Avatar,
   Box,
   Button,
-  Center,
   Flex,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
   Text,
-  useColorModeValue,
   useBreakpointValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";

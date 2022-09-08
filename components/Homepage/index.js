@@ -38,10 +38,10 @@ export const CTASection = () => {
             </Text>
             <Stack direction={"row"}>
               <Button
-                bg={"blue.400"}
+                bg="#41b6e6"
                 rounded={"full"}
-                color={"white"}
-                _hover={{ bg: "blue.500" }}
+                color="black"
+                _hover={{ bg: "#3da7d2" }}
               >
                 <Link href={"/projects"}>Projects</Link>
               </Button>

@@ -54,10 +54,10 @@ export default function NavItem() {
           <Link href={"/blog"}>Blog</Link>
         </Box>
         <Button
-          bgColor="blue.400"
-          color="white"
+          bgColor="#41b6e6"
+          color="black"
           ml={"4"}
-          _hover={{ bg: "blue.500" }}
+          _hover={{ bg: "#3da7d2" }}
         >
           <Link href={"/contact"}>Contact</Link>
         </Button>

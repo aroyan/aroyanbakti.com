@@ -6,7 +6,6 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Text,
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -27,10 +26,11 @@ export default function NavItem() {
     <Flex color={navItemsColor}>
       <Box display={hamburgerDisplay}>
         <Menu>
-          <MenuButton as={Button} cursor={"pointer"}>
-            <Text color={"transparent"} display="none">
-              Hamburger
-            </Text>
+          <MenuButton
+            as={Button}
+            cursor={"pointer"}
+            aria-label="Hamburger Button"
+          >
             <HamburgerIcon />
           </MenuButton>
           <MenuList alignItems={"center"}>

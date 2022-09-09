@@ -42,6 +42,7 @@ export const CTASection = () => {
                 rounded={"full"}
                 color="black"
                 _hover={{ bg: "#3da7d2" }}
+                aria-label="Projects"
               >
                 <Link href={"/projects"}>Projects</Link>
               </Button>
@@ -51,6 +52,7 @@ export const CTASection = () => {
                 variant="outline"
                 _hover={{ bg: "whiteAlpha.500" }}
                 width={"90px"}
+                aria-label="Blog"
               >
                 <Link href={"/blog"}>Blog</Link>
               </Button>
@@ -60,13 +62,19 @@ export const CTASection = () => {
       </Flex>
       <Flex justify="center">
         <IconContext.Provider value={{ className: "shared-class", size: 40 }}>
-          <a href="https://github.com/aroyan" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/aroyan"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
             <GoMarkGithub style={{ marginRight: "32px" }} />
           </a>
           <a
             href="https://linkedin.com/in/aroyanbakti"
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
           >
             <GrLinkedin />
           </a>

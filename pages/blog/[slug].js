@@ -1,9 +1,9 @@
 import "highlight.js/styles/tokyo-night-dark.css";
 import { Flex, Heading, HStack, Text } from "@chakra-ui/react";
-import { getPostFromSlug, getSlugs } from "../../utils/api";
-import BlogHead from "../../components/BlogHead";
+import { getPostFromSlug, getSlugs } from "@/utils/api";
+import BlogHead from "@/components/BlogHead";
 import Image from "next/image";
-import Layout from "../../components/Layout/Layout";
+import Layout from "@/components/Layout/Layout";
 import { MDXRemote } from "next-mdx-remote";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import readingTime from "reading-time";
@@ -11,7 +11,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import { serialize } from "next-mdx-remote/serialize";
-import ShareButton from "../../components/ShareButton";
+import ShareButton from "@/components/ShareButton";
 
 const Markdown = ({ post }) => {
   // eslint-disable-next-line no-unused-vars

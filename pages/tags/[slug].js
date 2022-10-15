@@ -1,6 +1,6 @@
-import BlogCard from "../../components/BlogCard";
-import BlogLayout from "../../components/Layout/BlogLayout";
-import { getAllPosts } from "../../utils/api";
+import BlogCard from "@/components/BlogCard";
+import BlogLayout from "@/components/Layout/BlogLayout";
+import { getAllPosts } from "@/utils/api";
 
 export default function Tags({ slug, meta }) {
   return (

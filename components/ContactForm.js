@@ -1,26 +1,10 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Text,
-  Textarea,
-  useColorModeValue,
-  VStack,
-} from "@chakra-ui/react";
 import { useForm, ValidationError } from "@formspree/react";
-import { MdOutlineEmail } from "react-icons/md";
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xrgjdlqg");
   const rechaptaRef = React.createRef();
-  const bgColor = useColorModeValue("white", "gray.700");
-  const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
 
   // const onSubmit = () => {
   //   const rechaptaValue = rechaptaRef.current.getValue();
@@ -28,50 +12,45 @@ export default function ContactForm() {
   // };
 
   if (state.succeeded) {
-    return <Text textAlign={"center"}>Thanks for your message!</Text>;
+    return <p textAlign={"center"}>Thanks for your message!</p>;
   }
   return (
-    <Box bg={bgColor} borderRadius="lg" p={8} color={textColor} shadow="base">
-      <VStack spacing={5}>
-        <FormControl isRequired onSubmit={handleSubmit} as="form" method="post">
-          <FormLabel htmlFor="email">Email</FormLabel>
+    <div borderRadius="lg" p={8} shadow="base">
+      <div spacing={5}>
+        <form isRequired onSubmit={handleSubmit} as="form" method="post">
+          <label htmlFor="email">Email</label>
 
-          <InputGroup>
-            <InputLeftElement>
-              <MdOutlineEmail />
-            </InputLeftElement>
-            <Input
+          <div>
+            <input
               type="email"
               name="email"
               id="email"
               placeholder="Your Email"
             />
-          </InputGroup>
+          </div>
           <ValidationError prefix="Email" field="email" errors={state.errors} />
-        </FormControl>
+        </form>
 
-        <FormControl isRequired>
-          <FormLabel htmlFor="message">Message</FormLabel>
+        <label htmlFor="message">Message</label>
 
-          <Textarea
-            name="message"
-            id="message"
-            placeholder="Your Message"
-            rows={6}
-            resize="none"
-          />
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
-        </FormControl>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Your Message"
+          rows={6}
+          resize="none"
+        />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
 
         <ReCAPTCHA
           ref={rechaptaRef}
           sitekey="6LepxVwgAAAAAIse-Nm-igSDVmV5DU-Wl_NaFbGL"
         />
-        <Button
+        <button
           colorScheme="blue"
           bg="blue.400"
           color="white"
@@ -82,8 +61,8 @@ export default function ContactForm() {
           type="submit"
         >
           Send Message
-        </Button>
-      </VStack>
-    </Box>
+        </button>
+      </div>
+    </div>
   );
 }

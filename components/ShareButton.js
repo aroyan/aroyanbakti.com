@@ -1,4 +1,3 @@
-import { Badge, Button } from "@chakra-ui/react";
 import { useState } from "react";
 
 const ShareButton = ({ title, text, url }) => {
@@ -13,11 +12,11 @@ const ShareButton = ({ title, text, url }) => {
   return (
     <>
       {shared ? (
-        <Badge colorScheme={"green"} p="2">
+        <div colorScheme={"green"} p="2">
           Thanks for sharing
-        </Badge>
+        </div>
       ) : (
-        <Button
+        <button
           colorScheme="cyan"
           mt="4"
           onClick={async () => {
@@ -31,7 +30,7 @@ const ShareButton = ({ title, text, url }) => {
           }}
         >
           Share
-        </Button>
+        </button>
       )}
     </>
   );

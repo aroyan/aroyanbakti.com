@@ -1,11 +1,9 @@
 import "highlight.js/styles/tokyo-night-dark.css";
-import { Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import { getPostFromSlug, getSlugs } from "@/utils/api";
 import BlogHead from "@/components/BlogHead";
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 import { MDXRemote } from "next-mdx-remote";
-import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import readingTime from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
@@ -25,32 +23,31 @@ const Markdown = ({ post }) => {
     <>
       <BlogHead title={post.meta.title} description={post.meta.excerpt} />
       <Layout>
-        <Prose>
-          <Flex flexDir="column">
-            <HStack>
-              <Text>{`${date} ${month} ${year}`}</Text>
-              <Text verticalAlign="center">&bull;</Text>
-              <Text>{estReadingTime}</Text>
-            </HStack>
-            <Heading as={"h1"}>{post.meta.title}</Heading>
-          </Flex>
-          <MDXRemote {...post.source} components={{ Image }} />
-        </Prose>
-        <Flex
+        <div flexDir="column">
+          <div>
+            <p>{`${date} ${month} ${year}`}</p>
+            <p verticalAlign="center">&bull;</p>
+            <p>{estReadingTime}</p>
+          </div>
+          <h1>{post.meta.title}</h1>
+        </div>
+        <MDXRemote {...post.source} components={{ Image }} />
+
+        <div
           as="section"
           my="8"
           justify="center"
           align="center"
           flexDir="column"
         >
-          <Text fontSize={"2xl"} fontWeight="bold">
+          <p fontSize={"2xl"} fontWeight="bold">
             Thanks for reading, like this article?
-          </Text>
+          </p>
           <ShareButton
             title={post.meta.title}
             url={`/blog/${post.meta.slug}`}
           />
-        </Flex>
+        </div>
       </Layout>
     </>
   );

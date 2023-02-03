@@ -1,7 +1,5 @@
 import * as ga from "@/lib/ga";
-import { ChakraProvider } from "@chakra-ui/react";
 import Script from "next/script";
-import theme from "@/utils/theme";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -19,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
   return (
-    <ChakraProvider theme={theme}>
+    <>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -35,7 +33,7 @@ function MyApp({ Component, pageProps }) {
           `}
       </Script>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </>
   );
 }
 

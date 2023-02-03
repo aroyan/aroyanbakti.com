@@ -1,4 +1,3 @@
-import { Badge, Flex, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 const BlogCard = ({ meta }) => {
@@ -7,7 +6,7 @@ const BlogCard = ({ meta }) => {
   const [_, month, dt, year, ...rest] = new Date(date).toString().split(" ");
 
   return (
-    <LinkBox
+    <div
       border="1px dashed gray"
       rounded="md"
       p="4"
@@ -18,20 +17,20 @@ const BlogCard = ({ meta }) => {
       justifyContent="space-between"
     >
       <Link href={`/blog/${slug}`} passHref>
-        <LinkOverlay fontWeight="bold" fontSize="1.15rem" color="orange.400">
+        <div fontWeight="bold" fontSize="1.15rem" color="orange.400">
           {title}
-        </LinkOverlay>
+        </div>
       </Link>
-      <Text>{excerpt}</Text>
-      <Flex wrap={"wrap"} gap="1">
+      <p>{excerpt}</p>
+      <div wrap={"wrap"} gap="1">
         {tags.map((tag) => (
-          <Badge key={tag} colorScheme="cyan">
+          <div key={tag} colorScheme="cyan">
             <Link href={`/tags/${tag}`}>{tag}</Link>
-          </Badge>
+          </div>
         ))}
-      </Flex>
-      <Text>{`${dt} ${month} ${year}`}</Text>
-    </LinkBox>
+      </div>
+      <p>{`${dt} ${month} ${year}`}</p>
+    </div>
   );
 };
 

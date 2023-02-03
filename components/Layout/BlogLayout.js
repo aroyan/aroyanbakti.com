@@ -1,4 +1,3 @@
-import { Box, Center, Grid } from "@chakra-ui/react";
 import CustomHead from "./HeadMeta";
 import Navbar from "../Navbar";
 
@@ -6,10 +5,10 @@ export default function BlogLayout({ children, title }) {
   return (
     <>
       <CustomHead title={title} />
-      <Box maxW={"full"} as={"main"}>
+      <div maxW={"full"} as={"main"}>
         <Navbar />
-        <Center pb={"8"}>
-          <Grid
+        <div pb={"8"}>
+          <div
             templateColumns={{ md: "repeat(2, 1fr)" }}
             gap={"8"}
             width={"container.md"}
@@ -17,9 +16,9 @@ export default function BlogLayout({ children, title }) {
             margin={{ base: "8" }}
           >
             {children}
-          </Grid>
-        </Center>
-      </Box>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

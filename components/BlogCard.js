@@ -11,7 +11,7 @@ const BlogCard = ({ meta }) => {
       border="1px dashed gray"
       rounded="md"
       p="4"
-      _hover={{ border: "1px solid white" }}
+      _hover={{ border: "1px solid orange" }}
       display="flex"
       flexDir="column"
       gap="4"

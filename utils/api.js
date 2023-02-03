@@ -1,8 +1,8 @@
-import path from "path";
+/* eslint-disable no-unused-vars */
 import fs from "fs";
-import { sync } from "glob";
-import os from "os";
 import matter from "gray-matter";
+import path from "path";
+import { sync } from "glob";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 

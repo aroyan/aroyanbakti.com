@@ -1,3 +1,11 @@
 export default function Page() {
-  return <h1 className="text-3xl font-bold">Hello, Next.js!</h1>;
+  return (
+    <>
+      <h1>Aroyan Bakti</h1>
+      <p>
+        Frontend developer and open source contributor. Currently open to
+        fulltime or freelance work
+      </p>
+    </>
+  );
 }

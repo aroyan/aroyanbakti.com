@@ -1,11 +1,13 @@
 {
   "name": "aroyanbakti.com",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "scripts": {
-    "dev": "npx http-server"
+    "dev": "npx http-server",
+    "format": " npx prettier public/*/** --write"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "prettier": "^2.8.3"
   }
 }

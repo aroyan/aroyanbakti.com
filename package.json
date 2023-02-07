@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": ""
+    "dev": "npx http-server"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
